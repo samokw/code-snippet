@@ -1,0 +1,21 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{template "title" .}} - codesnippet</title>
+    <link href="../static/css/output.css" rel="stylesheet">
+</head>
+<body>
+    <header class="py-4 px-8 border-b font-medium flex justify-between">
+        <h1>
+            <a class="text-xl font-bold no-underline text-black" href="/">code<span class="text-blue-500">snip</span>it</a>
+        </h1>
+        {{template "nav" .}}
+    </header>
+    <main>
+        {{template "main" .}}
+    </main>
+</body>
+</html>
+{{end}}
