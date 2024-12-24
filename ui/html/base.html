@@ -13,9 +13,12 @@
         </h1>
         {{template "nav" .}}
     </header>
-    <main>
+    <main class="flex flex-row min-h-screen justify-center items-center">
         {{template "main" .}}
     </main>
+    <footer class="py-4 px-8 border-t font-medium">
+        <div class="text-center">Powered by <span class=" text-cyan-400"> Go </span> and <span class=" text-blue-500"> TailwindCSS </span></div>
+    </footer>
 </body>
 </html>
 {{end}}

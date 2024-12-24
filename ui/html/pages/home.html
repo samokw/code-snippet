@@ -1,8 +1,25 @@
 {{define "title"}}Home{{end}}
 
 {{define "main"}}
-    <h2>Latest Snippets</h2>
-    <p>There's nothing here to see yet!</p>
+    {{if .Snippets}}
+    <table class="table-auto text-justify mx-auto w-3/4">
+        <tr>
+            <th class="border border-blue-300 px-4 py-2">Title</th>
+            <th class="border border-blue-300 px-4 py-2">Created</th>
+            <th class="border border-blue-300 px-4 py-2">ID</th>
+        </tr>
+        {{range .Snippets}}
+        <div>
+            <tr class=" hover:bg-blue-100">
+                <td class="border border-blue-300 px-4 py-2"><a class="block w-full h-full" href='/snippet/view?id={{.ID}}'>{{.Title}}</a></td>
+                <td class="border border-blue-300 px-4 py-2"><a class="block w-full h-full" href='/snippet/view?id={{.ID}}'>{{.Created.Format "2006-01-02 15:04"}}</a></td>
+                <td class="border border-blue-300 px-4 py-2"><a class="block w-full h-full" href='/snippet/view?id={{.ID}}'>#{{.ID}}</a></td>
+            </tr>
+        </div>
+        {{end}}
+    </table>
+    {{else}}
+    <p>Nothing here yet!</p>
+    {{end}}
 {{end}}
-
 {{template "base" .}}
