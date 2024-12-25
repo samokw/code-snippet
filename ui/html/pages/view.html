@@ -1,19 +1,21 @@
 {{define "title"}}Snippet #{{.Snippet.ID}}{{end}}
 
 {{define "main"}}
+{{with .Snippet}}
 <div class="bg-white rounded-lg shadow-lg p-6 w-3/4 mx-auto">
     <div class="mb-4 flex justify-between">
-        <strong class="text-xl font-semibold">{{.Snippet.Title}}</strong>
-        <span class="text-gray-600 ml-2">#{{.Snippet.ID}}</span>
+        <strong class="text-xl font-semibold">{{.Title}}</strong>
+        <span class="text-gray-600 ml-2">#{{.ID}}</span>
     </div>
     <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto">
-        <code class="font-mono text-sm" style="display: block;">{{.Snippet.Content | html}}</code>
+        <code class="font-mono text-sm" style="display: block;">{{.Content | html}}</code>
     </pre>
     <div class="mt-4 text-sm text-black flex justify-between">
-        <time>Created: {{.Snippet.Created.Format "2006-01-02 15:04"}}</time>
-        <time>Expires: {{.Snippet.Expires.Format "2006-01-02 15:04"}}</time>
+        <time>Created: {{humanDate .Created}}</time>
+        <time>Expires: {{humanDate .Expires}}</time>
     </div>
 </div>
+{{end}}
 {{end}}
 
 {{template "base" .}}

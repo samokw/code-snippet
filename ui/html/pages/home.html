@@ -11,9 +11,9 @@
         {{range .Snippets}}
         <div>
             <tr class=" hover:bg-blue-100">
-                <td class="border border-blue-300 px-4 py-2"><a class="block w-full h-full" href='/snippet/view?id={{.ID}}'>{{.Title}}</a></td>
-                <td class="border border-blue-300 px-4 py-2"><a class="block w-full h-full" href='/snippet/view?id={{.ID}}'>{{.Created.Format "2006-01-02 15:04"}}</a></td>
-                <td class="border border-blue-300 px-4 py-2"><a class="block w-full h-full" href='/snippet/view?id={{.ID}}'>#{{.ID}}</a></td>
+                <td class="border border-blue-300 px-4 py-2"><a class="block w-full h-full" href='/snippet/view/{{.ID}}'>{{.Title}}</a></td>
+                <td class="border border-blue-300 px-4 py-2"><a class="block w-full h-full" href='/snippet/view/{{.ID}}'>{{humanDate .Created}}</a></td>
+                <td class="border border-blue-300 px-4 py-2"><a class="block w-full h-full" href='/snippet/view/{{.ID}}'>#{{.ID}}</a></td>
             </tr>
         </div>
         {{end}}

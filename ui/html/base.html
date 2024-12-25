@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>{{template "title" .}} - codesnippet</title>
-    <link href="../static/css/output.css" rel="stylesheet">
+    <link href="/static/css/output.css" rel="stylesheet">
 </head>
 <body>
     <header class="py-4 px-8 border-b font-medium flex justify-between">
@@ -17,7 +17,7 @@
         {{template "main" .}}
     </main>
     <footer class="py-4 px-8 border-t font-medium">
-        <div class="text-center">Powered by <span class=" text-cyan-400"> Go </span> and <span class=" text-blue-500"> TailwindCSS </span></div>
+        <div class="text-center">Powered by <span class=" text-cyan-400"> Go </span> and <span class=" text-blue-500"> TailwindCSS </span> {{.CurrentYear}}</div>
     </footer>
 </body>
 </html>
